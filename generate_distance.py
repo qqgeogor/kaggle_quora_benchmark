@@ -63,45 +63,45 @@ pd.to_pickle(train_porter_jaccard,path+"train_porter_jaccard.pkl")
 pd.to_pickle(test_porter_jaccard,path+"test_porter_jaccard.pkl")
 
 
-print('Generate levenshtein_1')
-train_levenshtein_1 = train.astype(str).apply(lambda x:str_levenshtein_1(x['question1'],x['question2']),axis=1)
-test_levenshtein_1 = test.astype(str).apply(lambda x:str_levenshtein_1(x['question1'],x['question2']),axis=1)
-pd.to_pickle(train_levenshtein_1,path+"train_levenshtein_1.pkl")
-pd.to_pickle(test_levenshtein_1,path+"test_levenshtein_1.pkl")
+# print('Generate levenshtein_1')
+# train_levenshtein_1 = train.astype(str).apply(lambda x:str_levenshtein_1(x['question1'],x['question2']),axis=1)
+# test_levenshtein_1 = test.astype(str).apply(lambda x:str_levenshtein_1(x['question1'],x['question2']),axis=1)
+# pd.to_pickle(train_levenshtein_1,path+"train_levenshtein_1.pkl")
+# pd.to_pickle(test_levenshtein_1,path+"test_levenshtein_1.pkl")
 
-print('Generate porter levenshtein_1')
-train_porter_levenshtein_1 = train.astype(str).apply(lambda x:str_levenshtein_1(x['question1_porter'],x['question2_porter']),axis=1)
-test_porter_levenshtein_1 = test.astype(str).apply(lambda x:str_levenshtein_1(x['question1_porter'],x['question2_porter']),axis=1)
+# print('Generate porter levenshtein_1')
+# train_porter_levenshtein_1 = train.astype(str).apply(lambda x:str_levenshtein_1(x['question1_porter'],x['question2_porter']),axis=1)
+# test_porter_levenshtein_1 = test.astype(str).apply(lambda x:str_levenshtein_1(x['question1_porter'],x['question2_porter']),axis=1)
 
-pd.to_pickle(train_porter_levenshtein_1,path+"train_porter_levenshtein_1.pkl")
-pd.to_pickle(test_porter_levenshtein_1,path+"test_porter_levenshtein_1.pkl")
-
-
-print('Generate levenshtein_2')
-train_levenshtein_2 = train.astype(str).apply(lambda x:str_levenshtein_2(x['question1'],x['question2']),axis=1)
-test_levenshtein_2 = test.astype(str).apply(lambda x:str_levenshtein_2(x['question1'],x['question2']),axis=1)
-pd.to_pickle(train_levenshtein_2,path+"train_levenshtein_2.pkl")
-pd.to_pickle(test_levenshtein_2,path+"test_levenshtein_2.pkl")
-
-print('Generate porter levenshtein_2')
-train_porter_levenshtein_2 = train.astype(str).apply(lambda x:str_levenshtein_2(x['question1_porter'],x['question2_porter']),axis=1)
-test_porter_levenshtein_2 = test.astype(str).apply(lambda x:str_levenshtein_2(x['question1_porter'],x['question2_porter']),axis=1)
-
-pd.to_pickle(train_porter_levenshtein_2,path+"train_porter_levenshtein_2.pkl")
-pd.to_pickle(test_porter_levenshtein_2,path+"test_porter_levenshtein_2.pkl")
+# pd.to_pickle(train_porter_levenshtein_1,path+"train_porter_levenshtein_1.pkl")
+# pd.to_pickle(test_porter_levenshtein_1,path+"test_porter_levenshtein_1.pkl")
 
 
-print('Generate sorensen')
-train_sorensen = train.astype(str).apply(lambda x:str_sorensen(x['question1'],x['question2']),axis=1)
-test_sorensen = test.astype(str).apply(lambda x:str_sorensen(x['question1'],x['question2']),axis=1)
-pd.to_pickle(train_sorensen,path+"train_sorensen.pkl")
-pd.to_pickle(test_sorensen,path+"test_sorensen.pkl")
+# print('Generate levenshtein_2')
+# train_levenshtein_2 = train.astype(str).apply(lambda x:str_levenshtein_2(x['question1'],x['question2']),axis=1)
+# test_levenshtein_2 = test.astype(str).apply(lambda x:str_levenshtein_2(x['question1'],x['question2']),axis=1)
+# pd.to_pickle(train_levenshtein_2,path+"train_levenshtein_2.pkl")
+# pd.to_pickle(test_levenshtein_2,path+"test_levenshtein_2.pkl")
 
-print('Generate porter sorensen')
-train_porter_sorensen = train.astype(str).apply(lambda x:str_sorensen(x['question1_porter'],x['question2_porter']),axis=1)
-test_porter_sorensen = test.astype(str).apply(lambda x:str_sorensen(x['question1_porter'],x['question2_porter']),axis=1)
+# print('Generate porter levenshtein_2')
+# train_porter_levenshtein_2 = train.astype(str).apply(lambda x:str_levenshtein_2(x['question1_porter'],x['question2_porter']),axis=1)
+# test_porter_levenshtein_2 = test.astype(str).apply(lambda x:str_levenshtein_2(x['question1_porter'],x['question2_porter']),axis=1)
 
-pd.to_pickle(train_porter_sorensen,path+"train_porter_sorensen.pkl")
-pd.to_pickle(test_porter_sorensen,path+"test_porter_sorensen.pkl")
+# pd.to_pickle(train_porter_levenshtein_2,path+"train_porter_levenshtein_2.pkl")
+# pd.to_pickle(test_porter_levenshtein_2,path+"test_porter_levenshtein_2.pkl")
+
+
+# print('Generate sorensen')
+# train_sorensen = train.astype(str).apply(lambda x:str_sorensen(x['question1'],x['question2']),axis=1)
+# test_sorensen = test.astype(str).apply(lambda x:str_sorensen(x['question1'],x['question2']),axis=1)
+# pd.to_pickle(train_sorensen,path+"train_sorensen.pkl")
+# pd.to_pickle(test_sorensen,path+"test_sorensen.pkl")
+
+# print('Generate porter sorensen')
+# train_porter_sorensen = train.astype(str).apply(lambda x:str_sorensen(x['question1_porter'],x['question2_porter']),axis=1)
+# test_porter_sorensen = test.astype(str).apply(lambda x:str_sorensen(x['question1_porter'],x['question2_porter']),axis=1)
+
+# pd.to_pickle(train_porter_sorensen,path+"train_porter_sorensen.pkl")
+# pd.to_pickle(test_porter_sorensen,path+"test_porter_sorensen.pkl")
 
 
