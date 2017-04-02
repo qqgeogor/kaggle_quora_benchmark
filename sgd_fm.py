@@ -97,30 +97,27 @@ class SGD(object):
             self.loss_function = log_loss_function
 
     def preload(self,train,test):
-        # train = data_generator(train,self.no_norm,self.task)
-        # dim = 0
-        # count = 0
-        # for x,y in train:
-        #     for i in x:
-        #         idx,value = i
-        #         if idx >dim:
-        #             dim = idx
-        #     count+=1
-        # print('Training samples:',count)
-        # test = data_generator(test,self.no_norm,self.task)
-        # count=0
-        # for x,y in test:
-        #     for i in x:
-        #         idx,value = i
-        #         if idx >dim:
-        #             dim = idx
-        #     count+=1
-        # print('Testing samples:',count)
+        train = data_generator(train,self.no_norm,self.task)
+        dim = 0
+        count = 0
+        for x,y in train:
+            for i in x:
+                idx,value = i
+                if idx >dim:
+                    dim = idx
+            count+=1
+        print('Training samples:',count)
+        test = data_generator(test,self.no_norm,self.task)
+        count=0
+        for x,y in test:
+            for i in x:
+                idx,value = i
+                if idx >dim:
+                    dim = idx
+            count+=1
+        print('Testing samples:',count)
         
-        # dim = dim+1
-        # dim = 5745464+1
-        dim = 3073537+1
-        # dim = 40+1
+        dim = dim+1
         print("Number of features:",dim)
         
         self.W = [uniform(-self.ini_stdev, self.ini_stdev) for _ in range(dim)]
@@ -414,7 +411,7 @@ path = "../input/"
 sgd = SGD(lr=0.001,adam=True,dropout=0.8,l2=0.00,l2_fm=0.00,task='c',n_components=1,nb_epoch=30,interaction=True,no_norm=False)
 sgd.preload(path+'X_tfidf.svm',path+'X_t_tfidf.svm')
 # sgd.load_weights()
-# sgd.train(path+'X_train_tfidf.svm',path+'X_test_tfidf.svm',in_memory=False)
+sgd.train(path+'X_train_tfidf.svm',path+'X_test_tfidf.svm',in_memory=False)
 sgd.load_weights()
 sgd.predict(path+'X_test_tfidf.svm',out='valid.csv')
 print sgd.validate(path+'X_test_tfidf.svm')
